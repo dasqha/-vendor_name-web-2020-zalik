@@ -17,7 +17,7 @@ class CreateEmployersTable extends Migration
             $table->id();
             $table->string('name')->default('test');
             $table->string('address')->default('street two');
-            $table->string('card_code')->default('3fds');
+            $table->integer('card_code')->default(1111);
             $table->timestamps();
         });
     }

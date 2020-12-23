@@ -22,7 +22,9 @@ class EmployerFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->name,
+            'address' => $this->faker->address,
+            'card_code' => $this->faker->numberBetween($min = 1000, $max = 9000),
         ];
     }
 }

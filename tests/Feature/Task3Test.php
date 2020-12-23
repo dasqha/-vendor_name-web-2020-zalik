@@ -26,11 +26,7 @@ class Task3Test extends TestCase
     public function testUpdateOk()
     {
         $model = Employer::factory()->create();
-        $data = Employer::factory()->make([
-            'name' => 'test name',
-            'address' => 'test address',
-            'card_code' => 'test card code',
-        ])->toArray();
+        $data = Employer::factory()->make()->toArray();
         $routeName = $this->modelPluralName . ".update";
         $response = $this->putJson(route($routeName, [$this->modelSingleName => $model->id]), $data);
         $response->assertStatus(Response::HTTP_OK);
